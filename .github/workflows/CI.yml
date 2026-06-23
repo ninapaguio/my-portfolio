@@ -16,7 +16,7 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10
-
+          
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -24,13 +24,13 @@ jobs:
           cache: pnpm
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockffile
 
       - name: Biome Check
-        run: pnpm check
+        run: pnpm check # biome check . is inside the package
 
       - name: Type Check
-        run: pnpm tsc --noEmit
+        run: pnpm exec tsc --noEmit 
 
       - name: Production Build
         run: pnpm build
