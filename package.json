@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "biome lint .",
     "format": "biome format ."
+    "check": "biome check ."
   },
   "dependencies": {
     "next": "16.2.9",
