@@ -5,7 +5,11 @@ export const metadata: Metadata = {
 	description: "Background, education, and the tools I work with.",
 };
 
-const interests: string[] = ["1", "2"];
+const interests: string[] = [
+	"Building a maintainable codebase",
+	"Adapting to different ideas to solve problems",
+	"AI agents and ML integration",
+];
 
 const techStack: string[] = ["3", "4"];
 
@@ -36,7 +40,10 @@ export default async function AboutPage() {
 
 			<div>
 				<p className="text-lg leading-relaxed text-secondary-text">
-					sample text
+					Aspiring software engineer focused on building maintainable,
+					efficient, and scalable applications. Currently focusing on Full-Stack
+					Web Development. I love to create applications that came from
+					different ideas to have solutions to solve problems.
 				</p>
 			</div>
 
@@ -78,7 +85,7 @@ export default async function AboutPage() {
 
 			<div className="rounded-2xl border border-border/50 bg-white p-8">
 				<h2 className="font-display text-lg font-semibold text-primary-text">
-					Tech stack
+					Technologies I've Worked With
 				</h2>
 				<ul className="mt-4 flex flex-col gap-2">
 					{techStack.map((tech: string) => (

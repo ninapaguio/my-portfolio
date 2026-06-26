@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 			className="group flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-white transition-shadow hover:shadow-md"
 		>
 			<Image
-				loading="lazy"
+				loading="eager"
 				src={project.image[0]}
 				alt={`Image of the ${project.title} project`}
 				width={640}
