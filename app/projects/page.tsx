@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
 					</span>
 				</div>
 				<h1 className="mt-3 font-display text-4xl font-semibold text-accent-primary-deep">
-					Things I&apos;ve Built
+					Things I've Built
 				</h1>
 				<p className="mt-3 max-w-lg text-secondary-text">
 					Some of my projects during my academe.
