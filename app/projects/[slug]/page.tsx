@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			</Link>
 
 			<Image
-				loading="lazy"
+				loading="eager"
 				src={project.image[1]}
 				alt={`Image of the ${project.title} project`}
 				width={960}
