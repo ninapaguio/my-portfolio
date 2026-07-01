@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ProjectCard from "@/components/ProjectCard";
-import { type Project, projects } from "@/lib/projects";
+import { type Project, projects } from "@/lib/constantsData";
 
 export const metadata: Metadata = {
 	title: "Projects",
@@ -32,6 +32,7 @@ export default async function ProjectsPage() {
 				</p>
 			</div>
 
+			{/* Projects Grid Section */}
 			<div className="grid gap-6 sm:grid-cols-2">
 				{allProjects.map((project) => (
 					<ProjectCard key={project.slug} project={project} />

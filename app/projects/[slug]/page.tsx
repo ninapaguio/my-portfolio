@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, projects } from "@/lib/projects";
+import { getProjectBySlug, projects } from "@/lib/constantsData";
 
 interface ProjectPageProps {
 	params: Promise<{ slug: string }>;
@@ -42,6 +42,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 				← All Projects
 			</Link>
 
+			{/* Project Header Section */}
 			<Image
 				loading="eager"
 				src={project.image[1]}
@@ -72,6 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 				)}
 			</div>
 
+			{/* Project Details Section */}
 			<div className="flex flex-col gap-6">
 				<div>
 					<h2 className="font-mono text-xs uppercase tracking-wider text-accent-secondary">
