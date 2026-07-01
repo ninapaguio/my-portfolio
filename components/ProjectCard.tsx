@@ -10,7 +10,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import type { Project } from "@/lib/projects";
+import type { Project } from "@/lib/constantsData";
 
 interface ProjectCardProps {
 	project: Project;
