@@ -1,95 +1,9 @@
 import type { Metadata } from "next";
-import {
-	SiCanva,
-	SiFigma,
-	SiFlask,
-	SiGit,
-	SiGithub,
-	SiJavascript,
-	SiLaravel,
-	SiMysql,
-	SiNextdotjs,
-	SiPython,
-	SiReact,
-	SiTypescript,
-} from "react-icons/si";
-import { TbFileTypeSql } from "react-icons/tb";
+import { stats, technologies, timeline } from "@/lib/constantsData";
 
 export const metadata: Metadata = {
 	title: "About",
 	description: "About page of Niñalene Paguio",
-};
-
-interface TimelineItem {
-	title: string;
-	subtitle: string;
-	year: string;
-	current?: boolean;
-}
-
-const timeline: TimelineItem[] = [
-	{
-		year: "2026",
-		title: "Software Engineering Intern",
-		subtitle: "Stratpoint Technologies, Inc.",
-		current: true,
-	},
-	{
-		year: "2026",
-		title: "BS Computer Science",
-		subtitle: "Polytechnic University of the Philippines",
-		current: true,
-	},
-	{
-		year: "2022–2026",
-		title: "DOST Undergraduate Scholar",
-		subtitle: "Department of Science and Technology",
-		current: true,
-	},
-	{
-		year: "2025",
-		title: "Programmer Intern",
-		subtitle: "DOST – Philippine Embassy Services",
-	},
-];
-
-const stats = [
-	{
-		value: "4+",
-		label: "Years Learning",
-	},
-	{
-		value: "2",
-		label: "Internships",
-	},
-	{
-		value: "2026",
-		label: "Graduating",
-	},
-];
-
-const technologies = {
-	Languages: [
-		{ name: "TypeScript", icon: SiTypescript },
-		{ name: "JavaScript", icon: SiJavascript },
-		{ name: "Python", icon: SiPython },
-		{ name: "SQL", icon: TbFileTypeSql },
-	],
-
-	Frameworks: [
-		{ name: "React", icon: SiReact },
-		{ name: "Next.js", icon: SiNextdotjs },
-		{ name: "Laravel", icon: SiLaravel },
-		{ name: "Flask", icon: SiFlask },
-	],
-
-	Tools: [
-		{ name: "Git", icon: SiGit },
-		{ name: "GitHub", icon: SiGithub },
-		{ name: "Figma", icon: SiFigma },
-		{ name: "Canva", icon: SiCanva },
-		{ name: "MySQL", icon: SiMysql },
-	],
 };
 
 export default function AboutPage() {
@@ -108,6 +22,7 @@ export default function AboutPage() {
 				</p>
 			</div>
 
+			{/* Stats Section */}
 			<div className="grid gap-6 md:grid-cols-3">
 				{stats.map((stat) => (
 					<div
@@ -125,6 +40,7 @@ export default function AboutPage() {
 				))}
 			</div>
 
+			{/* Education & Experience Section */}
 			<div className="grid gap-10 lg:grid-cols-2">
 				<div className="rounded-3xl border border-border bg-white p-8 shadow-sm">
 					<h2 className="mb-8 font-display text-3xl font-semibold">
@@ -154,6 +70,7 @@ export default function AboutPage() {
 					</div>
 				</div>
 
+				{/* Technologies Section */}
 				<div className="rounded-3xl border border-border bg-white p-8 shadow-sm">
 					<h2 className="mb-8 font-display text-3xl font-semibold">
 						Technologies I've Used

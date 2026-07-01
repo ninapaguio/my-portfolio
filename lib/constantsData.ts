@@ -1,8 +1,7 @@
-export interface ProjectLink {
-	label: string;
-	href: string;
+// Data for the slug projects page
+export function getProjectBySlug(slug: string): Project | undefined {
+	return projects.find((project) => project.slug === slug);
 }
-
 export interface Project {
 	slug: string;
 	title: string;
@@ -69,6 +68,122 @@ export const projects: Project[] = [
 	},
 ];
 
-export function getProjectBySlug(slug: string): Project | undefined {
-	return projects.find((project) => project.slug === slug);
+// Data for the about page
+import {
+	SiCanva,
+	SiFigma,
+	SiFlask,
+	SiGit,
+	SiGithub,
+	SiJavascript,
+	SiLaravel,
+	SiMysql,
+	SiNextdotjs,
+	SiPython,
+	SiReact,
+	SiTypescript,
+} from "react-icons/si";
+import { TbFileTypeSql } from "react-icons/tb";
+
+export interface TimelineItem {
+	title: string;
+	subtitle: string;
+	year: string;
+	current?: boolean;
 }
+
+export interface StatItem {
+	value: string;
+	label: string;
+}
+
+export interface TechItem {
+	name: string;
+	icon: React.ComponentType<{ className?: string }>;
+}
+
+export const timeline: TimelineItem[] = [
+	{
+		year: "2026",
+		title: "Software Engineering Intern",
+		subtitle: "Stratpoint Technologies, Inc.",
+		current: true,
+	},
+	{
+		year: "2026",
+		title: "BS Computer Science",
+		subtitle: "Polytechnic University of the Philippines",
+		current: true,
+	},
+	{
+		year: "2022–2026",
+		title: "DOST Undergraduate Scholar",
+		subtitle: "Department of Science and Technology",
+		current: true,
+	},
+	{
+		year: "2025",
+		title: "Programmer Intern",
+		subtitle: "DOST – Personnel Evaluation System",
+	},
+];
+
+export const stats: StatItem[] = [
+	{
+		value: "4+",
+		label: "Years Learning",
+	},
+	{
+		value: "2",
+		label: "Internships",
+	},
+	{
+		value: "2026",
+		label: "Graduating",
+	},
+];
+
+export const technologies: Record<string, TechItem[]> = {
+	Languages: [
+		{ name: "TypeScript", icon: SiTypescript },
+		{ name: "JavaScript", icon: SiJavascript },
+		{ name: "Python", icon: SiPython },
+		{ name: "SQL", icon: TbFileTypeSql },
+	],
+	Frameworks: [
+		{ name: "React", icon: SiReact },
+		{ name: "Next.js", icon: SiNextdotjs },
+		{ name: "Laravel", icon: SiLaravel },
+		{ name: "Flask", icon: SiFlask },
+	],
+	Tools: [
+		{ name: "Git", icon: SiGit },
+		{ name: "GitHub", icon: SiGithub },
+		{ name: "Figma", icon: SiFigma },
+		{ name: "Canva", icon: SiCanva },
+		{ name: "MySQL", icon: SiMysql },
+	],
+};
+
+// Data for the contact page
+export interface SocialLink {
+	label: string;
+	username: string;
+	href: string;
+	description: string;
+}
+
+export const socialLinks: SocialLink[] = [
+	{
+		label: "GitHub",
+		username: "@ninapaguio",
+		href: "https://github.com/ninapaguio",
+		description: "View my projects and contributions",
+	},
+	{
+		label: "LinkedIn",
+		username: "@npaguio",
+		href: "https://linkedin.com/in/npaguio",
+		description: "Let's connect professionally",
+	},
+];

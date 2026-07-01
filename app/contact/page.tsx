@@ -2,34 +2,13 @@
 
 import { useActionState } from "react";
 import SubmitButton from "@/components/SubmitButton";
+import { socialLinks } from "@/lib/constantsData";
 import { type ContactFormState, submitContact } from "./actions";
 
 const initialState: ContactFormState = {
 	status: "idle",
 	message: "",
 };
-
-interface SocialLink {
-	label: string;
-	username: string;
-	href: string;
-	description: string;
-}
-
-const socialLinks: SocialLink[] = [
-	{
-		label: "GitHub",
-		username: "@ninapaguio",
-		href: "https://github.com/ninapaguio",
-		description: "View my projects and contributions",
-	},
-	{
-		label: "LinkedIn",
-		username: "@npaguio",
-		href: "https://linkedin.com/in/npaguio",
-		description: "Let's connect professionally",
-	},
-];
 
 export default function ContactPage() {
 	const [state, formAction] = useActionState(submitContact, initialState);
@@ -49,6 +28,7 @@ export default function ContactPage() {
 						</p>
 					</div>
 
+					{/* Social Links Section */}
 					<div className="space-y-5">
 						<div className="flex items-center gap-4">
 							<div className="h-px flex-1 bg-border/40" />
@@ -92,6 +72,7 @@ export default function ContactPage() {
 					</div>
 				</div>
 
+				{/* Contact Form Section */}
 				<div className="rounded-3xl border border-border/40 bg-white p-8 shadow-sm md:p-10">
 					<form action={formAction} className="space-y-6">
 						<div className="space-y-2">
