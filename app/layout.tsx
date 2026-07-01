@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
 	title: {
 		default: "NP Portfolio",
-		template: "%s",
+		template: "%s · NP Portfolio",
 	},
 	description:
 		"A portfolio site built with Next.js, showcasing projects and experience.",
@@ -41,9 +41,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
 			lang="en"
 			className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
 		>
-			<body className="font-body bg-background text-primary-text antialiased flex min-h-screen flex-col">
+			<body
+				id="top"
+				className="font-body bg-background text-primary-text antialiased flex min-h-screen flex-col"
+			>
 				<NavBar />
-				<main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-2 py-12 md:px-10">
+				<main
+					id="main-content"
+					className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-12 md:px-10"
+				>
 					{children}
 				</main>
 				<Footer />

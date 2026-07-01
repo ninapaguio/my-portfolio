@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @theme {
-	--color-background: #faf6ee;
+	--color-background: #fcf8f8;
 	--color-background-deep: #f0e9d8;
 
 	--color-primary-text: #1f1b16;
@@ -26,4 +26,27 @@ body {
 	outline: 2px solid var(--color-accent-primary);
 	outline-offset: 3px;
 	border-radius: 2px;
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-up {
+	animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animate-fade-up {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
 }

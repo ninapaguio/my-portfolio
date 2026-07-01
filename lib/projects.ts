@@ -14,7 +14,6 @@ export interface Project {
 	outcome: string;
 	stack: string[];
 	image: string[];
-	links: ProjectLink[];
 }
 
 export const projects: Project[] = [
@@ -33,9 +32,8 @@ export const projects: Project[] = [
 			"The web application was built using flask and deployed on HuggingFace Spaces.",
 		outcome:
 			"Pluma was able to achieve its goal by being conservative in correcting grammar errors.",
-		stack: [],
-		image: ["/pluma.png", "/pluma-viewDetails.png"],
-		links: [],
+		stack: ["Python", "JavaScript", "Flask"],
+		image: ["/pluma.png", "/plumaViewDetails.png"],
 	},
 	{
 		slug: "mindsweeper-kitties",
@@ -44,14 +42,14 @@ export const projects: Project[] = [
 		role: "Frontend and functionality developer",
 		oneLiner:
 			"An interactive game featuring classic Minesweeper mechanics with added competitive elements for human vs. AI gameplay.",
-		problem: "",
+		problem:
+			"Developing an AI that could make logical and competitive decisions without relying on random guesses.",
 		approach:
 			"Used of rule-based AI to create a competitive Minesweeper game where human players can challenge an AI opponent.",
 		outcome:
 			"The game was successful in providing an engaging experience for both human and AI players.",
-		stack: [],
-		image: ["/mindsweeper-kitties.png", "/mindsweeper-kitties-viewDetails.png"],
-		links: [],
+		stack: ["Python", "JavaScript", "Flask"],
+		image: ["/mindsweeperKitties.png", "/mindsweeperKittiesViewDetails.png"],
 	},
 	{
 		slug: "lab-pup-scheduling-system",
@@ -66,9 +64,8 @@ export const projects: Project[] = [
 			"Developed a full-stack web application using raw html, css, javascript and php that allows faculty members to reserve laboratory rooms, view availability, and manage their reservations.",
 		outcome:
 			"It was unfinished due to time constraints, but it was a great learning experience that allowed me to know the basic concepts of web development.",
-		stack: [],
-		image: ["/lab-pup.png", "/lab-pup-viewDetails.png"],
-		links: [],
+		stack: ["JavaScript", "PHP"],
+		image: ["/labPup.png", "/labPupViewDetails.png"],
 	},
 ];
 

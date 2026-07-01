@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, type ProjectLink, projects } from "@/lib/projects";
+import { getProjectBySlug, projects } from "@/lib/projects";
 
 interface ProjectPageProps {
 	params: Promise<{ slug: string }>;
@@ -100,20 +100,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 					</div>
 				)}
 			</div>
-
-			{project.links.length > 0 && (
-				<div className="flex flex-wrap gap-3 border-t border-border/40 pt-6">
-					{project.links.map((link: ProjectLink) => (
-						<a
-							key={link.label}
-							href={link.href}
-							className="rounded-full border-2 border-primary-text/15 px-4 py-2 font-mono text-xs font-medium text-primary-text transition-colors hover:border-primary-text/40"
-						>
-							{link.label}
-						</a>
-					))}
-				</div>
-			)}
 		</article>
 	);
 }
