@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 async function getProjects(): Promise<Project[]> {
-	await new Promise((resolve) => setTimeout(resolve, 300));
+	await new Promise((resolve) => setTimeout(resolve, 4000));
 	return projects;
 }
 

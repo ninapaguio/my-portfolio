@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
 	title: "Home",
@@ -60,29 +61,27 @@ export default function HomePage() {
 					className="animate-fade-up flex flex-wrap gap-4"
 					style={{ animationDelay: "400ms" }}
 				>
-					<Link
-						href="/projects"
-						className="rounded-full bg-accent-primary px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary-deep"
+					<Button
+						asChild
+						className="h-auto rounded-full bg-accent-primary px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary-deep"
 					>
-						View Projects
-					</Link>
+						<Link href="/projects">View Projects</Link>
+					</Button>
 
-					<Link
-						href="/about"
-						className="rounded-full border border-border bg-white px-6 py-3 font-medium text-primary-text transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-primary hover:text-accent-primary"
+					<Button
+						asChild
+						variant="outline"
+						className="h-auto rounded-full border border-border bg-white px-6 py-3 font-medium text-primary-text transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-primary hover:text-accent-primary"
 					>
-						About Me
-					</Link>
+						<Link href="/about">About Me</Link>
+					</Button>
 				</div>
 			</div>
 
-			{}
 			<div
 				className="animate-fade-up relative flex w-full max-w-lg shrink-0 flex-col items-center pb-6 md:max-w-xl md:pb-0 md:fixed md:top-24 md:right-10 md:bottom-0 md:left-260 md:z-0 md:w-[clamp(380px,38vw,580px)] lg:right-16 xl:right-24"
 				style={{ animationDelay: "200ms" }}
 			>
-				{/* Soft glow sitting behind the cutout — fades to transparent on its own, */}
-				{/* so there's nothing for a parent box to clip into a hard edge. */}
 				<div
 					aria-hidden
 					className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[clamp(440px,72vh,720px)] w-[clamp(440px,72vh,720px)] -translate-x-1/2 -translate-y-1/2 rounded-full"

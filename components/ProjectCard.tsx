@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardDescription,
@@ -180,36 +181,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 										{project.stack.slice(0, 2).map((tech) => (
 											<span
 												key={tech}
-												className="
-													rounded-full
-													border
-													border-border
-													bg-muted
-													px-3
-													py-1
-													font-mono
-													text-[11px]
-													transition-colors
-													group-hover:border-accent-primary/40
-												"
+												className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-[11px] transition-colors group-hover:border-accent-primary/40"
 											>
 												{tech}
 											</span>
 										))}
 
 										{project.stack.length > 2 && (
-											<span
-												className="
-													rounded-full
-													border
-													border-border
-													bg-muted
-													px-3
-													py-1
-													font-mono
-													text-[11px]
-												"
-											>
+											<span className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-[11px]">
 												+{project.stack.length - 2}
 											</span>
 										)}
@@ -218,12 +197,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							)}
 
 							<CardFooter className="border-t-0 bg-transparent justify-end">
-								<span className="flex items-center gap-1 cursor-pointer rounded-full border border-accent-secondary-deep/30 px-3 py-1 font-mono text-xs font-medium text-accent-secondary-deep transition-colors hover:bg-accent-secondary-deep hover:text-white">
-									View project
-									<span className="transition-transform duration-300 group-hover:translate-x-1">
-										→
-									</span>
-								</span>
+								<Button
+									asChild
+									variant="outline"
+									className="relative z-10 rounded-full border border-accent-secondary-deep/30 px-3 py-1 font-mono text-xs font-medium text-accent-secondary-deep transition-colors hover:bg-accent-secondary-deep hover:text-white"
+								>
+									<Link
+										href={`/projects/${project.slug}`}
+										className="flex items-center gap-1"
+									>
+										View project
+										<span className="transition-transform duration-300 group-hover:translate-x-1">
+											→
+										</span>
+									</Link>
+								</Button>
 							</CardFooter>
 						</div>
 					</Card>
