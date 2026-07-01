@@ -6,7 +6,19 @@ export const metadata: Metadata = {
 	description: "About page of Niñalene Paguio",
 };
 
-export default function AboutPage() {
+async function getAboutData() {
+	await new Promise((resolve) => setTimeout(resolve, 4000));
+
+	return {
+		stats,
+		technologies,
+		timeline,
+	};
+}
+
+export default async function AboutPage() {
+	const { stats, technologies, timeline } = await getAboutData();
+
 	return (
 		<section className="space-y-24 py-6">
 			<div className="space-y-6">
