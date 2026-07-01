@@ -16,24 +16,24 @@ export default async function ProjectsPage() {
 	const allProjects = await getProjects();
 
 	return (
-		<section className="flex flex-col gap-10">
-			<div>
-				<div className="flex items-center gap-2">
-					<span className="h-1.5 w-1.5 rounded-full bg-accent-primary" />
-					<span className="font-mono text-xs uppercase tracking-widest text-secondary-text/70">
-						Projects
-					</span>
-				</div>
-				<h1 className="mt-3 font-display text-4xl font-semibold text-accent-primary-deep">
+		<section
+			className="flex flex-col gap-10"
+			aria-labelledby="projects-heading"
+		>
+			<div className="space-y-8">
+				<h1
+					id="projects-heading"
+					className="font-display text-5xl font-semibold leading-tight text-accent-secondary-deep md:text-7xl"
+				>
 					Things I've Built
 				</h1>
-				<p className="mt-3 max-w-lg text-secondary-text">
+				<p className="max-w-2xl text-lg leading-9 text-secondary-text">
 					Some of my projects during my academe.
 				</p>
 			</div>
 
 			<div className="grid gap-6 sm:grid-cols-2">
-				{allProjects.map((project: Project) => (
+				{allProjects.map((project) => (
 					<ProjectCard key={project.slug} project={project} />
 				))}
 			</div>

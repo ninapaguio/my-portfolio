@@ -1,23 +1,24 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
+import { Button } from "@/components/ui/button";
 
 interface SubmitButtonProps {
 	label?: string;
 }
 
 export default function SubmitButton({
-	label = "Send message",
+	label = "Send Message",
 }: SubmitButtonProps) {
 	const { pending } = useFormStatus();
 
 	return (
-		<button
+		<Button
 			type="submit"
 			disabled={pending}
-			className="rounded-full bg-accent-secondary-deep px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-accent-secondary disabled:cursor-not-allowed disabled:opacity-60"
+			className="h-12 w-full rounded-xl bg-accent-secondary-deep text-sm font-semibold text-background transition-all hover:-translate-y-0.5 hover:bg-accent-secondary disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
 		>
 			{pending ? "Sending..." : label}
-		</button>
+		</Button>
 	);
 }
