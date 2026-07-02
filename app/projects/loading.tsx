@@ -23,7 +23,7 @@ export default function ProjectsLoading() {
 					return (
 						<div
 							key={project.slug}
-							className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
+							className="overflow-hidden rounded-3xl border border-border bg-background-white shadow-sm"
 						>
 							<Skeleton className="aspect-video w-full rounded-none" />
 

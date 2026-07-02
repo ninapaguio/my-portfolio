@@ -5,7 +5,7 @@ export default function NotFound() {
 	return (
 		<section className="flex flex-1 flex-col items-center justify-center gap-6 py-24 text-center">
 			<p className="font-mono text-xs uppercase tracking-widest text-secondary-text/70">
-				404
+				HTTP 404
 			</p>
 
 			<h1 className="font-display text-4xl font-semibold text-accent-primary-deep md:text-6xl">

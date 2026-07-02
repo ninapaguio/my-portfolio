@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 			<Button
 				asChild
 				variant="ghost"
-				className="w-fit font-mono text-xs uppercase tracking-widest text-secondary-text/70 hover:text-primary-text"
+				className="label-eyebrow w-fit tracking-widest text-secondary-text/70 hover:text-primary-text"
 			>
 				<Link href="/projects" passHref>
 					← All Projects

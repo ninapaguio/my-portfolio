@@ -1,10 +1,11 @@
 @import "tailwindcss";
+
 @theme {
+	/* Default/Light Colors */
 	--color-background-white: #ffffff;
 	--color-background: #fcf8f8;
 	--color-background-deep: #f0e9d8;
 
-	--color-white: #ffffff;
 	--color-primary-text: #1f1b16;
 	--color-secondary-text: #4a433b;
 
@@ -15,20 +16,21 @@
 	--color-accent-tertiary: #e8b339;
 
 	--color-border: #c7bca3;
+	--color-muted: #f0e9d8;
+	--color-muted-foreground: #4a433b;
 
+	/* Typography */
 	--font-display: var(--font-fraunces), Georgia, serif;
 	--font-body: var(--font-inter), system-ui, sans-serif;
 	--font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
-	--color-muted: #f0e9d8;
-	--color-muted-foreground: #4a433b;
 }
 
+/* Dark Theme Token Overrides */
 .dark {
-	--color-background-white: #ffffff;
+	--color-background-white: #1c1814;
 	--color-background: #17130f;
 	--color-background-deep: #221c16;
 
-	--color-white: #ffffff;
 	--color-primary-text: #ffffff;
 	--color-secondary-text: #faefdd;
 
@@ -39,39 +41,51 @@
 	--color-accent-tertiary: #f0c15c;
 
 	--color-border: #3a332b;
-
 	--color-muted: #221c16;
 	--color-muted-foreground: #c7bfb2;
 }
+
+/* Global Elements */
 body {
 	background-color: var(--color-background);
 	color: var(--color-primary-text);
 }
+
 :focus-visible {
 	outline: 2px solid var(--color-accent-primary);
 	outline-offset: 3px;
 	border-radius: 2px;
 }
 
-@keyframes fade-up {
-	from {
-		opacity: 0;
-		transform: translateY(14px);
+@layer components {
+	/* Shared card surface */
+	.surface-card,
+	.surface-card-hover {
+		@apply rounded-3xl border border-border bg-background-white p-8 shadow-sm;
 	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
+
+	/* Interactive card surface */
+	.surface-card-hover {
+		@apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
 	}
-}
 
-.animate-fade-up {
-	animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
+	/* Small uppercase mono "eyebrow" label */
+	.label-eyebrow {
+		@apply font-mono text-xs uppercase tracking-[0.25em] text-secondary-text;
+	}
 
-@media (prefers-reduced-motion: reduce) {
-	.animate-fade-up {
-		animation: none;
-		opacity: 1;
-		transform: none;
+	/* Large page-level hero heading */
+	.heading-hero {
+		@apply font-display text-5xl font-semibold leading-tight text-accent-secondary-deep md:text-7xl;
+	}
+
+	/* Section heading */
+	.heading-section {
+		@apply mb-8 font-display text-3xl font-semibold;
+	}
+
+	/* Lead paragraph */
+	.body-lead {
+		@apply text-lg leading-9 text-secondary-text;
 	}
 }
