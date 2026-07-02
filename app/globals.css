@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @theme {
+	--color-background-white: #ffffff;
 	--color-background: #fcf8f8;
 	--color-background-deep: #f0e9d8;
 
+	--color-white: #ffffff;
 	--color-primary-text: #1f1b16;
 	--color-secondary-text: #4a433b;
 
@@ -17,8 +19,29 @@
 	--font-display: var(--font-fraunces), Georgia, serif;
 	--font-body: var(--font-inter), system-ui, sans-serif;
 	--font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
-	--color-muted: #f0e9d8; /* or your background-deep, or a light gray */
+	--color-muted: #f0e9d8;
 	--color-muted-foreground: #4a433b;
+}
+
+.dark {
+	--color-background-white: #ffffff;
+	--color-background: #17130f;
+	--color-background-deep: #221c16;
+
+	--color-white: #ffffff;
+	--color-primary-text: #ffffff;
+	--color-secondary-text: #faefdd;
+
+	--color-accent-primary: #f2794f;
+	--color-accent-primary-deep: #ff9c72;
+	--color-accent-secondary: #3f9a92;
+	--color-accent-secondary-deep: #5cc4ba;
+	--color-accent-tertiary: #f0c15c;
+
+	--color-border: #3a332b;
+
+	--color-muted: #221c16;
+	--color-muted-foreground: #c7bfb2;
 }
 body {
 	background-color: var(--color-background);
