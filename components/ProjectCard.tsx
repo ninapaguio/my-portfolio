@@ -115,7 +115,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 		>
 			<div
 				ref={tiltRef}
-				className="h-full will-change-transform"
+				className="relative z-10 h-full will-change-transform"
 				style={{
 					transformStyle: "preserve-3d",
 				}}
@@ -218,7 +218,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
 			<Link
 				href={`/projects/${project.slug}`}
-				className="absolute inset-0 rounded-xl"
+				className="absolute inset-0 z-0 rounded-xl"
 				aria-label={`View ${project.title} project`}
 			/>
 		</div>

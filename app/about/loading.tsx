@@ -23,7 +23,7 @@ export default function AboutLoading() {
 				{stats.map((stat) => (
 					<div
 						key={stat.label}
-						className="rounded-3xl border border-border bg-white p-8 shadow-sm"
+						className="rounded-3xl border border-border bg-background-white p-8 shadow-sm"
 					>
 						<Skeleton className="mx-auto h-12 w-20" />
 						<Skeleton className="mx-auto mt-4 h-4 w-24" />
@@ -51,7 +51,7 @@ export default function AboutLoading() {
 				</div>
 
 				{/* Technologies */}
-				<div className="rounded-3xl border border-border bg-white p-8 shadow-sm">
+				<div className="rounded-3xl border border-border bg-background-white p-8 shadow-sm">
 					<Skeleton className="mb-8 h-9 w-64" />{" "}
 					<div className="space-y-8">
 						{Object.entries(technologies).map(([group, techs]) => (
