@@ -49,7 +49,7 @@ export default function HomePage() {
 
 				<div className="group relative h-[clamp(420px,70vh,640px)] w-full md:h-full md:flex-1">
 					<Image
-						src="/my-profile.png"
+						src="/myProfile.png"
 						alt="Portrait of Niñalene"
 						width={600}
 						height={600}
