@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavLink {
 	href: string;
@@ -35,7 +36,9 @@ export default function NavBar() {
 					: "border-border/60 bg-background/80"
 			}`}
 		>
-			<nav className="mx-auto flex max-w-5xl items-center justify-center gap-4 px-6 py-4 md:py-5">
+			<nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4 md:py-5">
+				<div className="hidden w-10 md:block" aria-hidden="true" />
+
 				<div className="flex items-center gap-4 md:gap-8">
 					{navLinks.map((link) => {
 						const active = pathname === link.href;
@@ -66,6 +69,8 @@ export default function NavBar() {
 						);
 					})}
 				</div>
+
+				<ThemeToggle />
 			</nav>
 		</header>
 	);

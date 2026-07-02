@@ -90,14 +90,6 @@ export default function HomePage() {
 							"radial-gradient(circle, rgba(43,124,118,0.22) 0%, rgba(43,124,118,0.10) 45%, rgba(43,124,118,0) 72%)",
 					}}
 				/>
-				<div
-					aria-hidden
-					className="pointer-events-none absolute -bottom-10 -right-10 -z-10 h-56 w-56 rounded-full md:h-64 md:w-64"
-					style={{
-						background:
-							"radial-gradient(circle, rgba(232,179,57,0.28) 0%, rgba(232,179,57,0) 70%)",
-					}}
-				/>
 
 				<div className="group relative h-[clamp(420px,70vh,640px)] w-full md:h-full md:flex-1">
 					<Image
