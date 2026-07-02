@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
 import { getProjectBySlug, projects } from "@/lib/constantsData";
 
 interface ProjectPageProps {
@@ -35,12 +36,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
 	return (
 		<article className="flex flex-col gap-8">
-			<Link
-				href="/projects"
-				className="font-mono text-xs uppercase tracking-widest text-secondary-text/70 hover:text-primary-text"
+			<Button
+				asChild
+				variant="ghost"
+				className="label-eyebrow w-fit tracking-widest text-secondary-text/70 hover:text-primary-text"
 			>
-				← All Projects
-			</Link>
+				<Link href="/projects" passHref>
+					← All Projects
+				</Link>
+			</Button>
 
 			{/* Project Header Section */}
 			<Image

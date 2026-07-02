@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 };
 
 async function getProjects(): Promise<Project[]> {
-	await new Promise((resolve) => setTimeout(resolve, 300));
 	return projects;
 }
 
@@ -21,13 +20,10 @@ export default async function ProjectsPage() {
 			aria-labelledby="projects-heading"
 		>
 			<div className="space-y-8">
-				<h1
-					id="projects-heading"
-					className="font-display text-5xl font-semibold leading-tight text-accent-secondary-deep md:text-7xl"
-				>
+				<h1 id="projects-heading" className="heading-hero">
 					Things I've Built
 				</h1>
-				<p className="max-w-2xl text-lg leading-9 text-secondary-text">
+				<p className="body-lead max-w-2xl">
 					Some of my projects during my academe.
 				</p>
 			</div>

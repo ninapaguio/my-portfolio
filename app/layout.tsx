@@ -3,6 +3,7 @@ import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const fraunces = Fraunces({
 	subsets: ["latin"],
@@ -39,20 +40,28 @@ export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html
 			lang="en"
+			suppressHydrationWarning
 			className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
 		>
 			<body
 				id="top"
 				className="font-body bg-background text-primary-text antialiased flex min-h-screen flex-col"
 			>
-				<NavBar />
-				<main
-					id="main-content"
-					className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-12 md:px-10"
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
 				>
-					{children}
-				</main>
-				<Footer />
+					<NavBar />
+					<main
+						id="main-content"
+						className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 py-12 md:px-10"
+					>
+						{children}
+					</main>
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

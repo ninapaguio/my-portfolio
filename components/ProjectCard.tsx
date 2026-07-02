@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardDescription,
@@ -108,127 +109,118 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 	}, []);
 
 	return (
-		<Link href={`/projects/${project.slug}`} className="block h-full">
+		<div
+			ref={wrapperRef}
+			className="group relative h-full rounded-xl transition-all duration-300 hover:-translate-y-1"
+		>
 			<div
-				ref={wrapperRef}
-				className="group relative h-full rounded-xl transition-all duration-300 hover:-translate-y-1"
+				ref={tiltRef}
+				className="relative z-10 h-full will-change-transform"
+				style={{
+					transformStyle: "preserve-3d",
+				}}
 			>
-				<div
-					ref={tiltRef}
-					className="h-full will-change-transform"
-					style={{
-						transformStyle: "preserve-3d",
-					}}
+				<Card
+					className="
+						flex h-full flex-col pt-0
+						ring-1 ring-border/60
+						shadow-md
+						transition-all
+						duration-300
+						group-hover:ring-accent-primary/30
+						group-hover:shadow-xl
+						group-hover:shadow-black/10
+					"
 				>
-					<Card
-						className="
-							flex h-full flex-col pt-0
-							ring-1 ring-border/60
-							shadow-md
-							transition-all
-							duration-300
-							group-hover:ring-accent-primary/30
-							group-hover:shadow-xl
-							group-hover:shadow-black/10
-						"
-					>
-						<div className="overflow-hidden rounded-t-xl p-2 pb-0">
-							<Image
-								ref={imageRef}
-								src={project.image[0]}
-								alt={`Image of ${project.title}`}
-								width={640}
-								height={400}
-								priority
-								className="
-									aspect-video
-									w-full
-									rounded-lg
-									object-cover
-									transition-all
-									duration-500
-									group-hover:brightness-105
-								"
-							/>
-						</div>
+					<div className="overflow-hidden rounded-t-xl p-2 pb-0">
+						<Image
+							ref={imageRef}
+							src={project.image[0]}
+							alt={`Image of ${project.title}`}
+							width={640}
+							height={400}
+							priority
+							className="
+								aspect-video
+								w-full
+								rounded-lg
+								object-cover
+								transition-all
+								duration-500
+								group-hover:brightness-105
+							"
+						/>
+					</div>
 
-						<CardHeader>
-							<span className="font-mono text-xs text-secondary-text opacity-60">
-								{project.year}
-							</span>
+					<CardHeader>
+						<span className="font-mono text-xs text-secondary-text opacity-60">
+							{project.year}
+						</span>
 
-							<CardTitle
-								className="
-									text-primary-text
-									transition-colors
-									duration-300
-									group-hover:text-accent-primary
-								"
-							>
-								{project.title}
-							</CardTitle>
+						<CardTitle
+							className="
+								text-primary-text
+								transition-colors
+								duration-300
+								group-hover:text-accent-primary
+							"
+						>
+							{project.title}
+						</CardTitle>
 
-							<CardDescription className="text-secondary-text">
-								{project.oneLiner}
-							</CardDescription>
-						</CardHeader>
+						<CardDescription className="text-secondary-text">
+							{project.oneLiner}
+						</CardDescription>
+					</CardHeader>
 
-						<div className="mt-auto flex flex-col bg-muted/40">
-							{project.stack.length > 0 && (
-								<div className="px-6 py-4">
-									<div className="flex flex-wrap gap-2">
-										{project.stack.slice(0, 2).map((tech) => (
-											<span
-												key={tech}
-												className="
-													rounded-full
-													border
-													border-border
-													bg-muted
-													px-3
-													py-1
-													font-mono
-													text-[11px]
-													transition-colors
-													group-hover:border-accent-primary/40
-												"
-											>
-												{tech}
-											</span>
-										))}
+					<div className="mt-auto flex flex-col bg-muted/40">
+						{project.stack.length > 0 && (
+							<div className="px-6 py-4">
+								<div className="flex flex-wrap gap-2">
+									{project.stack.slice(0, 2).map((tech) => (
+										<span
+											key={tech}
+											className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-[11px] transition-colors group-hover:border-accent-primary/40"
+										>
+											{tech}
+										</span>
+									))}
 
-										{project.stack.length > 2 && (
-											<span
-												className="
-													rounded-full
-													border
-													border-border
-													bg-muted
-													px-3
-													py-1
-													font-mono
-													text-[11px]
-												"
-											>
-												+{project.stack.length - 2}
-											</span>
-										)}
-									</div>
+									{project.stack.length > 2 && (
+										<span className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-[11px]">
+											+{project.stack.length - 2}
+										</span>
+									)}
 								</div>
-							)}
+							</div>
+						)}
 
-							<CardFooter className="border-t-0 bg-transparent justify-end">
-								<span className="flex items-center gap-1 cursor-pointer rounded-full border border-accent-secondary-deep/30 px-3 py-1 font-mono text-xs font-medium text-accent-secondary-deep transition-colors hover:bg-accent-secondary-deep hover:text-white">
+						<CardFooter className="border-t-0 bg-transparent justify-end">
+							<Button
+								asChild
+								variant="outline"
+								className="relative z-10 rounded-full border border-accent-secondary-deep/30 px-3 py-1 font-mono text-xs font-medium text-accent-secondary-deep transition-colors hover:bg-accent-secondary-deep hover:text-white"
+							>
+								<Link
+									href={`/projects/${project.slug}`}
+									className="flex items-center gap-1"
+								>
 									View project
 									<span className="transition-transform duration-300 group-hover:translate-x-1">
 										→
 									</span>
-								</span>
-							</CardFooter>
-						</div>
-					</Card>
-				</div>
+								</Link>
+							</Button>
+						</CardFooter>
+					</div>
+				</Card>
 			</div>
-		</Link>
+
+			<Link
+				href={`/projects/${project.slug}`}
+				className="absolute inset-0 z-0 rounded-xl"
+				aria-label={`View ${project.title} project`}
+			/>
+		</div>
 	);
 }
