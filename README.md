@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NP Portfolio
+
+Niñalene Paguio's personal portfolio site — built with React 19, Next.js 16 and Tailwind CSS. Showcases projects, background/experience, and a working contact form.
+
+**Live pages:** Home · Projects · Project detail · About · Contact
+
+---
+
+## Tech Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | react v19 next.js v16
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| UI primitives | [shadcn/ui](https://ui.shadcn.com/) (`Button`, `Card`, `Skeleton`) |
+| Theming | [next-themes](https://github.com/pacocoursey/next-themes) (light/dark, system-aware) |
+| Fonts | `next/font/google` — Fraunces (display), Inter (body), JetBrains Mono (mono) |
+| Icons | `react-icons` |
+| Forms | React `useActionState` + Next.js Server Actions |
+
+---
+
+## Project Structure
+
+```
+app/
+├── layout.tsx            # Root layout
+├── page.tsx               # Home page (hero)
+├── error.tsx               # Root error boundary
+├── not-found.tsx            # 404 page
+├── globals.css             # Tailwind import + design tokens (light/dark)
+├── about/
+│   ├── page.tsx           
+│   └── loading.tsx
+├── projects/
+│   ├── page.tsx          
+│   ├── loading.tsx
+│   └── [slug]/
+│       └── page.tsx        # Individual project detail
+└── contact/
+    ├── page.tsx            
+    └── actions.ts           # Server Action
+components/
+├── NavBar.tsx
+├── Footer.tsx
+├── ProjectCard.tsx          # Interactive tilt-on-hover project card
+├── ThemeToggle.tsx
+├── ThemeProvider.tsx
+├── SubmitButton.tsx
+└── ui/                      # shadcn/ui primitives
+
+lib/
+└── constantsData.ts          # Static content that can be large amount
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 22 
+- A [Resend](https://resend.com/) account and API key (for the contact form)
+
+### Installation
+
+```bash
+git clone <repo-url>
+cd np-portfolio
+npm install
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+CONTACT_TO_EMAIL=you@example.com
+CONTACT_FROM_EMAIL=noreply@yourdomain.com
+```
+
+> **Never commit `.env.local`.** In production (e.g. Vercel), set these in your host's environment variable dashboard instead.
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build & start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copyright © 2026 Niñalene Paguio. All rights reserved.
