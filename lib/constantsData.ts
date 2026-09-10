@@ -22,15 +22,13 @@ export const projects: Project[] = [
 		year: "2025 – 2026",
 		role: "ML & full-stack contributor",
 		oneLiner:
-			"A web application for Filipino grammar error correction using NMT Transformer approach.",
+		"A web application for Filipino grammar error correction using an NMT Transformer approach.",
 		problem:
-			"Filipino grammar error correction is a challenging task due to the complexity of the language and the lack of available resources." +
-			"Pluma aims to address this problem by providing a web application that can correct grammar errors in Filipino text.",
+			"Filipino grammar error correction is a challenging task due to linguistic complexity and limited low-resource NLP datasets. Pluma addresses this by providing an accessible web application that detects and corrects grammatical errors in Filipino text.",
 		approach:
-			"Used of NMT Transformer approach to train models for generating more training data and correcting grammar errors for Filipino." +
-			"The web application was built using flask and deployed on HuggingFace Spaces.",
+			"Employed an NMT Transformer approach to train models for generating synthetic training datasets and correcting Filipino grammar errors. The web application was built with Flask and deployed on HuggingFace Spaces.",
 		outcome:
-			"Pluma was able to achieve its goal by being conservative in correcting grammar errors.",
+			"Achieved reliable grammar correction by maintaining high precision and conservative error correction boundaries.",
 		stack: ["Python", "JavaScript", "Flask"],
 		image: ["/pluma.png", "/plumaViewDetails.png"],
 	},
@@ -42,11 +40,11 @@ export const projects: Project[] = [
 		oneLiner:
 			"An interactive game featuring classic Minesweeper mechanics with added competitive elements for human vs. AI gameplay.",
 		problem:
-			"Developing an AI that could make logical and competitive decisions without relying on random guesses.",
+			"Designing an AI opponent capable of making logical, competitive board decisions in real time without relying on pure random guessing.",
 		approach:
-			"Used of rule-based AI to create a competitive Minesweeper game where human players can challenge an AI opponent.",
+			"Implemented rule-based AI decision algorithms to create an engaging competitive Minesweeper experience where human players challenge an AI opponent.",
 		outcome:
-			"The game was successful in providing an engaging experience for both human and AI players.",
+			"Delivered an entertaining, responsive game dynamic that balances strategic board play with competitive AI interactions.",
 		stack: ["Python", "JavaScript", "Flask"],
 		image: ["/mindsweeperKitties.png", "/mindsweeperKittiesViewDetails.png"],
 	},
@@ -56,16 +54,66 @@ export const projects: Project[] = [
 		year: "2024 – 2025",
 		role: "Full-stack contributor",
 		oneLiner:
-			"A web application designed to reserve and manage laboratory rooms for faculty at the university.",
+			"A web application designed to reserve and manage laboratory rooms for university faculty.",
 		problem:
-			"A course project that aims to know the basic concepts of web development and how to create a functional web application that can be used in real-world scenarios.",
+			"Streamlining laboratory room reservations to avoid scheduling conflicts and provide faculty with real-time room availability.",
 		approach:
-			"Developed a full-stack web application using raw html, css, javascript and php that allows faculty members to reserve laboratory rooms, view availability, and manage their reservations.",
+			"Developed a full-stack web application using HTML, CSS, JavaScript, and PHP enabling faculty members to reserve laboratory rooms, monitor schedules, and manage bookings.",
 		outcome:
-			"It was unfinished due to time constraints, but it was a great learning experience that allowed me to know the basic concepts of web development.",
+			"While constrained by academic timelines, it served as an invaluable foundational experience in end-to-end full-stack development and database-driven workflows.",
 		stack: ["JavaScript", "PHP"],
 		image: ["/labPup.png", "/labPupViewDetails.png"],
 	},
+	{
+		slug: "my-blog",
+		title: "My Blog",
+		year: "2026",
+		role: "Full-stack Developer",
+		oneLiner:
+			"Full-stack Next.js 16 blog with instant multi-tag filtering, interactive discussions, and rate-limited Server Actions.",
+		problem:
+			"Traditional blogging platforms often feel sluggish and lack built-in abuse prevention for public comment and post submissions.",
+		approach:
+			"Utilized Next.js 16 App Router, React 19, and Drizzle ORM on PostgreSQL with Zod-validated Server Actions, in-memory IP rate limiting, and client-side combobox search.",
+		outcome:
+			"Delivered an optimized, secure blog with instant article discovery, animated UI transitions, and protected content workflows.",
+		stack: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"ORM",
+			"PostgreSQL",
+			"Tailwind CSS",
+			"Motion",
+			"Zod",
+		],
+		image: ["/myBlog.png", "/myBlogViewDetails.png"],
+	},
+	{
+		slug: "everflow",
+		title: "Everflow",
+		year: "2026",
+		role: "FullStack Developer",
+		oneLiner:
+			"Real-time collaborative project management workspace with optimistic Kanban boards and role-based permissions.",
+		problem:
+			"Managing project lifecycles and team tasks often suffers from UI latency during high-frequency board edits and lack of robust access controls.",
+		approach:
+			"Built on Next.js 16 and TypeScript, combining Drizzle ORM/PostgreSQL with Clerk authentication for server-enforced RBAC, Zustand for optimistic drag-and-drop updates, and Pusher for live team sync.",
+		outcome:
+			"Achieved a highly responsive, zero-latency task management experience with automated rollbacks on mutation failure and full real-time collaboration.",
+		stack: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Zustand",
+			"ORM",
+			"PostgreSQL",
+			"Clerk",
+		],
+		image: ["/everflowViewDetails.png", "/everflow.png"],
+	}
 ];
 
 // Data for the about page
